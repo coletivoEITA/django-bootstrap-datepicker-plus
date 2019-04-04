@@ -11,12 +11,13 @@ jQuery(function ($) {
         }
         catch (x) { }
         if (data.id && data.options) {
-            data.$element = $element.datetimepicker(data.options);
-            data.datepickerdata = $element.data("DateTimePicker");
+            data.$element = $element.parent().datetimepicker(data.options);
+            data.datepickerdata = $element.parent().data("DateTimePicker");
             datepickerDict[data.id] = data;
+            /*
             data.$element.next('.input-group-addon').on('click', function(){
                 data.datepickerdata.show();
-            });
+            });*/
             if(isBootstrap4){
                 data.$element.on("dp.show", function (e) {
                     $('.collapse.in').addClass('show');
