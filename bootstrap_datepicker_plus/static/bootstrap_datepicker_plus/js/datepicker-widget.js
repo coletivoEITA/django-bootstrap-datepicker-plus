@@ -11,7 +11,7 @@ jQuery(function ($) {
         }
         catch (x) { }
         if (data.id && data.options) {
-	    if (data.options['required']){ 
+	    if (data.required){
                 data.$element = $element.datetimepicker(data.options);
                 data.datepickerdata = $element.data("DateTimePicker");
                 datepickerDict[data.id] = data;
