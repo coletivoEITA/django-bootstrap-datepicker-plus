@@ -85,7 +85,7 @@ class BasePickerInput(get_base_input()):
         self.config['id'] = DatePickerDictionary.generate_id()
         self.config['picker_type'] = self.picker_type
         self.config['options'] = self._calculate_options()
-        self.config['required'] = self.required
+        self.config['required'] = required
         attrs = attrs if attrs else {}
         if 'class' not in attrs:
             attrs['class'] = 'form-control'
