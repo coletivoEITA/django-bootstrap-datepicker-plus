@@ -110,6 +110,8 @@ class BasePickerInput(get_base_input()):
 
     def get_context(self, name, value, attrs):
         """Return widget context dictionary."""
+        if (isinstance(value, int)):
+            value = str(value)
         context = super().get_context(
             name, value, attrs)
         context['widget']['attrs']['dp_config'] = json_dumps(self.config)
