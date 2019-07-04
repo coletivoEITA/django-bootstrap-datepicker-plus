@@ -76,6 +76,8 @@ class CompatibleDateTimeBaseInput(DateTimeBaseInput):
         """
         if value == '' or value is None:
             return None
+        if isinstance(value,int):
+            return str(value)
         return formats.localize_input(value, self.format)
 
     def get_context(self, name, value, attrs):
